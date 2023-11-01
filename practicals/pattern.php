@@ -1,10 +1,22 @@
-<?php
-$rows = 5; // Change this value to adjust the height of the inverted triangle
+<<?php
+// A readable and maintainable Inverted Triangle Pattern program in PHP
 
-for ($i = $rows; $i >= 1; $i--) {
-    for ($j = 1; $j <= $i; $j++) {
-        echo "* ";
+// Define the number of rows in the inverted triangle
+$numRows = 5;
+
+// Outer loop for each row
+for ($i = $numRows; $i >= 1; $i--) {
+    // Inner loop for spaces
+    for ($j = $numRows - $i; $j > 0; $j--) {
+        echo " ";
     }
+    
+    // Inner loop for stars
+    for ($k = 1; $k <= 2 * $i - 1; $k++) {
+        echo "*";
+    }
+    
+    // Move to the next line after each row
     echo "\n";
 }
 ?>
