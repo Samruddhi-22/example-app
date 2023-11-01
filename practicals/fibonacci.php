@@ -1,27 +1,21 @@
 <?php
-function generateFibonacci($n) {
-    $fibonacci = [];
-    
-    if ($n <= 0) {
-        return $fibonacci;
-    }
-    
-    $fibonacci[] = 0;
-    
-    if ($n > 1) {
-        $fibonacci[] = 1;
-    }
-    
+// A readable and maintainable Fibonacci program in PHP
+
+// Define a function to calculate the Fibonacci sequence
+function fibonacci($n) {
+    $fibonacci = [0, 1];
+
     for ($i = 2; $i < $n; $i++) {
-        $fibonacci[] = $fibonacci[$i - 1] + $fibonacci[$i - 2];
+        $fibonacci[$i] = $fibonacci[$i - 1] + $fibonacci[$i - 2];
     }
-    
+
     return $fibonacci;
 }
 
-$n = 10; // Change this to the number of Fibonacci numbers you want
-$fibonacciSequence = generateFibonacci($n);
+// Set the number of Fibonacci numbers to generate
+$num = 10;
 
-echo "Fibonacci sequence for the first $n numbers: ";
-echo implode(", ", $fibonacciSequence);
+// Generate and display the Fibonacci sequence
+$result = fibonacci($num);
+echo "Fibonacci sequence of the first $num numbers: " . implode(', ', $result);
 ?>
