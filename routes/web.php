@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Practicals\song;
+use App\Models\Song;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,7 +25,7 @@ Route::get('/veggies/{veggieName}', function (string $veggieName) {
 
 
 
-Route::get('/songs', function () {
+Route::get('/songs_static', function () {
     $song1 = new Song();
     $song1->setTitle("Stan");
     $song1->setArtist("Eminem");
@@ -40,4 +40,8 @@ Route::get('/songs', function () {
   
     return view('songs', [ 'songs' => [ $song1, $song2, $song3 ] ]); 
   });
+
+  Route::get('/songs', function () {
+    return view('songs', [ 'songs' => Song::all() ] );
+});
 ?>
