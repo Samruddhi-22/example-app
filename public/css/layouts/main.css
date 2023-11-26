@@ -52,8 +52,8 @@ footer {
 }
 .b1,.b2{
     padding: 10px;
-    background-color: aqua;
-    border: solid aqua;
+    background-color:rgb(71, 112, 201);
+    border: solid rgb(71, 112, 201);
     border-radius: 20px;
     margin: 5px;
 }   
